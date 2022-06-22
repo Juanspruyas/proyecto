@@ -72,14 +72,23 @@ div{
 
 }
 
-.playlist{
+.playlist {
  display: flex;
- justify-content:space-around;
+ padding: 0;
+ 
  justify-content: center;
- padding: 2.5%;
+ width: 90%;
+ justify-content: space-around;
 
-
+ box-shadow: 20px 22px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 20px 22px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 20px 22px 5px 0px rgba(0,0,0,0.75);
    
+}
+.playlist2 {
+display: flex;
+justify-content: center;
+align-items: center;
 }
 *{
     padding: 0%;
@@ -155,7 +164,7 @@ h2:after{
 .field{
     width: 100%;
     padding: 0,5rem 1rem;
-    background-color: rgba(230, 230, 230, 0,6);
+    
     font-size: 1.1rem;
     margin-bottom: 22px;
     transition: 0.3s;
