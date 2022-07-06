@@ -7,6 +7,10 @@ body {
   display: flex;
   justify-content: center; }
 
+main{
+  background-color:"../Proyecto-final/img/body.jpgs" ;
+}  
+
 .menu2 {
   list-style: none;
   padding: 0%;
@@ -16,6 +20,7 @@ body {
   justify-content: space-around;
   border: 2px solid black;
   margin: auto;
+  color: white;
    }
 
 .menu2 li a {
@@ -45,22 +50,30 @@ div {
   justify-content: space-around;
   height: auto;
   width: auto;
-  padding: 0%; }
+  padding: 0%;
+ }
+
+ .video{
+  box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+ }
+
+  .mapa{
+    box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+  }
 
 .playlist {
   display: flex;
   padding: 0;
   justify-content: center;
-  width: 90%;
-  justify-content: space-around;
-  box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75); }
+  width: 100%;
+ }
 
 .playlist2 {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+width: 80%; }
 
 * {
   padding: 0%;
@@ -208,6 +221,8 @@ footer li a:hover {
   display: flex; }
 
 .carrusel {
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center; }
 
@@ -232,7 +247,16 @@ footer li a:hover {
 /* PAG NOSOTROS VIDEOS */
 .videos-nosotros {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 22px 5px 0px rgba(0, 0, 0, 0.75); 
+margin: 20px; }
 
 .videos-nosotros {
   border: 2px solid black; }
+
+h3, .h2negro{
+  margin:30px;
+}
+
