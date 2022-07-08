@@ -260,3 +260,11 @@ h3, .h2negro{
   margin:30px;
 }
 
+/* PAGINA NUESTROS TRABAJOS  */
+
+.container-nt {
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
