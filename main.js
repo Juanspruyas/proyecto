@@ -49,15 +49,19 @@ let precioFinal =
 console.log(descuento20);*/
 
 
+
+//PRIMERA ENTREGA PROYECTO FINAL 
+
+
 class producto{
     constructor(nombre, precio, cantidad) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.disponible = true
 
     }
 }
-
 
 var arrayProductos = [];
 do{
@@ -75,16 +79,59 @@ while (comprobacion != "terminado" ||comprobacion != "Terminado"||comprobacion !
 
 console.log(arrayProductos);
 
-for(var producto of arrayProductos){
-    document.write("<h3> El producto ingresado es: " + producto.nombre + "</h3>");
-    document.write("<h3> La cantidad del producto ingresado es: " + producto.cantidad + "</h3>");
-    document.write("<h3> el precio del producto ingresado es " + (precioP * cantidadP)+"</h3>" );
+for( let producto of arrayProductos){
+let contenedor = document.createElement("div");
+//definimor el inner html del elemento con una plantilla de texto
+contenedor.innerHTML = "<h3> Nombre:"  + (producto.nombre) + "</h3>"
+                       "<p> Precio $:" +  (producto.precio) +"</p>"
+                       "<p> Cantidad:" + (producto.detalle) + "</p>";
+document.body.appendChild(contenedor); 
+ }
 
+//POCO STOCK - MENOS DE 3 PRODUCTOS
+
+var pocoStock = arrayProductos.filter(producto => producto.cantidad <= 3 );
+document.write("<h3>Lista de Productos con poco Stock (menos de 3 unidades): </h3>");
+for (let producto of pocoStock) {
+    let contenedor = document.createElement ("div");
+    // Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = "<h3> Nombre:"  + (producto.nombre) + "</h3>"
+                            "<p> Precio $:" +  (producto.precio) +"</p>"
+                            "<p> Cantidad:" + (producto.detalle) + "</p>";
+document.body.appendChild(contenedor); 
 }
+var sinStock = arrayProductos.filter(producto => producto.cantidad == 0 || producto.disponible == false);
+console.log(sinStock);
+document.write("<h3> Lista de Productos sin Stock (cantidad = 0 o disponible = false");
+
+for (var producto of sinStock) {
+    document.write ("<h3> Lista de Productos con stock (menos de 3 unidades)");
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = "<h3> Nombre:"  + (producto.nombre) + "</h3>"
+                            "<p> Precio $:" +  (producto.precio) +"</p>"
+                            "<p> Cantidad:" + (producto.detalle) + "</p>";
+document.body.appendChild(contenedor); 
+}
+
+
+
+
+
+
+
+                         
+
+
+
+                        
 
 console.log(producto.nombre);
 console.log(producto.cantidad);
-console.log(precioP * cantidadP);
+console.log(precioP * cantidadP)
+
+
+
+
 
 
 
