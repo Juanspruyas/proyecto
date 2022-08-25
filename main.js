@@ -46,7 +46,7 @@ let descuento20 = calcularDescuento(precio);
 let precioFinal = 
     alert ("El valor del producto seria $" + descuento20 + " con el descuento incluido");
 
-console.log(descuento20);*/
+console.log(descuento20);
 
 
 
@@ -113,21 +113,117 @@ for (var producto of sinStock) {
 document.body.appendChild(contenedor); 
 }
 
+console.log(producto.nombre);
+console.log(producto.cantidad);
+console.log(precioP * cantidadP)
+*/
 
 
+//ENTREGA DE EVENTOS
+
+class Alumno {
+    constructor(nombre,email,password) {
+        this.nombre = nombre;
+        this.email = email;
+        this.password = password;
+
+    }
+}
+
+//defino las variables globales que necesito para trabajarcon dom
+
+let arrayAlumnos = [];
+let miFormulario = document.querySelector("#formulario");
+let inputNombre = document.querySelector("#iNombre");
+
+let nombreI = formulario.children[1].value;
+let emailI  = formulario.children[3].value;
+let password = formulario.children[5].value;
+
+let contenedor  = document.querySelector("#alumnoIngresado");
+let displayTodos = document.querySelector("#displayTodos");
+let parrafos = displayTodos.getElementsByTagName("p");
+let bandera = false;
+
+//Defino los elementos de ambos botones
+
+miFormulario.addEventListener("submit", agregarAlumnos);
+btnMostrar.addEventListener('click',MostrarTodosAlumnos);
+
+//pongo en Focus el primer input
+
+inputNombre.focus();
+
+// Funciones
+
+//Funcion para comprobar el ingreso de datos en inputs
+
+function validarForm() {
+
+    nombreI = formulario.children[1].value;
+    emailI   = formulario.children[3].value;
+    passwordI   = formulario.children[5].value;
+    console.log(nombreI)
+    console.log(emailI)
+    console.log(passwordI)
+
+if (nombreI == '' || emailI == '' || passwordI == ''){
+    alert ('ERROR - Debe completar todos los campos para continuar');
+   inputNombre.focus();
+   bandera = false;
+} else {
+    bandera = true;
+}
+}
+
+//Funcion para agregar alumnos al array de alumnos 
+function agregarAlumnos(e) {
+    e.preventDefault();
+    validarForm();
+    if (bandera == true) {
+        let opcion = confirm ("Esta seguro de agregar el Alumno?");
+        if (opcion == true) {
+            let formulario = e.target 
+            arrayAlumnos.push(new Alumno(nombreI,emailI,passwordI));
+        } else {
+            alert("No se agregara el usuario");
+        }
+    
 
 
+formulario.children[1].value = "";
+formulario.children[3].value = "";
+formulario.children[5].value = "";
+contenedor.innerHTML = "";
+AgregarAlDom();
+inputNombre.focus();
+} else {
+    inputNombre.focus();
+}
 
 
+}
+//function para mostrar en dom el ultimo alumno ingresado
+
+function AgregarAlDom() {
+    contenedor.innerHTML = `<h3>Ultimo alumno Ingresado</h3>
+    <p><strong>Nombre:</strong> ${nombreI}</p>
+    <p><strong>Email:</strong>${emailI}</p>
+    <p><strong>Password</strong>${password}</p>`;
+
+
+    displayTodos.innerHTML += `
+    <p><strong>Nombre:</strong> ${alumno.nombre}</p>
+    <p><strong>Email:</strong>${alumno.email}</p>
+    <p><strong>Password</strong>${alumno.password}</p>`;
+
+}
                          
 
 
 
                         
 
-console.log(producto.nombre);
-console.log(producto.cantidad);
-console.log(precioP * cantidadP)
 
 
 
