@@ -23,6 +23,11 @@ main{
   margin: auto;
   color: white;
    }
+   .letra-blanca{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block; }
 
 .menu2 li a {
   text-decoration: none;
